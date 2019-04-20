@@ -6,35 +6,18 @@
     <title>Sam's Furniture Emporium</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="">
+    <link rel="stylesheet" href="./css/home.css">
     <script src="js/scripts.js" type="text/javascript"></script>
   </head>
   <body>
-    <div id="container">
-      
-    </div>
-
-    <div>
-
+    <div class='container'>
+      <a href="all-furniture.html">All Furniture</a>
+      <a href="sofas.html">Sofas</a>
+      <a href="rugs.html">Rugs</a>
+      <a href="tables.html">Tables</a>
+      <a href="chairs.html">Chairs</a>
     </div>
     
-    
-
-    <script>
-      let furnitureSearch = new FurnitureSearch();
-      
-      let promise = furnitureSearch.getInfo();
-
-      promise.then(function(response) {
-        let body = JSON.parse(response);
-        console.log(body);
-        body.body.data.forEach(function(item) {
-        document.getElementById("container").innerHTML += 
-                                                      `<div><h3>${item.name}</h3><br><p>${item.type}</p><br><p>${item.cost}</p><br><img src="${item.imageUrl}" alt=""><br><p>${item.description}</p></div>`
-        
-      });
-    });
-      
-    </script>
+    <script></script>
   </body>
 </html>
