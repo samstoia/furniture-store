@@ -29,9 +29,7 @@
         console.log(body);
         body.body.data.forEach(function(item) {
           if (item.type === "table") {
-
-          
-        document.getElementById("container").innerHTML += 
+            document.getElementById("container").innerHTML += 
                                                       `<div class="productContainter">
                                                         <img src="${item.imageUrl}" alt="">
                                                         <br><h3>${item.name}</h3><br>
