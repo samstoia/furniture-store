@@ -32,7 +32,12 @@
 
           
         document.getElementById("container").innerHTML += 
-                                                      `<div class="productContainter"><img src="${item.imageUrl}" alt=""><br><h3>${item.name}</h3><br><p>${item.type}</p><br><p>${item.cost}</p><br><p>${item.description}</p></div>`
+                                                      `<div class="productContainter">
+                                                      <img src="${item.imageUrl}" alt=""><br>
+                                                      <h3>${item.name}</h3><br>
+                                                      <p>${item.type}</p><br>
+                                                      <p>${item.cost}</p><br>
+                                                      <p>${item.description}</p></div>`
         }
       });
     });
