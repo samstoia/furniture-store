@@ -1,9 +1,10 @@
-#containter {
+/* #containter {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-}
+  grid-template-columns: repeat(1fr);
+} */
 
 .productContainter {
+  position: relative;
   height: 400px;
   margin: 40px;
   display: inline-block;
@@ -11,12 +12,16 @@
   max-width: 200px;
 }
 
-.productContainter img {
-  width: 180px;
-  height: auto;
-
+.imageContainer {
+  width: 200px;
+  height: 200px;
 }
 
+.productContainter img {
+  max-width: 100%;
+  max-height: 100%;
+  top: 0;
+}
 
 @media only screen and (max-width: 600px) {
   .productContainter {

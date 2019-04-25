@@ -1,16 +1,15 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <title>Sam's Furniture Emporium</title>
-    <meta name="description" content="">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="./css/home.css">
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="./css/home.css" />
     <script src="js/scripts.js" type="text/javascript"></script>
   </head>
   <body>
-
     <div class="headerContainer">
       <h3>Sam's Furniture Emporium</h3>
     </div>
@@ -21,7 +20,73 @@
       <a href="tables.html">Tables</a>
       <a href="chairs.html">Chairs</a>
     </div>
-    
-    <script></script>
+
+    <div class="search">
+      <input
+        type="text"
+        id="searchTerm"
+        placeholder="Search All Furnture"
+        required
+      />
+      <button onclick="search()">Search</button>
+    </div>
+
+    <div id="furnitureShow"></div>
+
+    <script>
+      function search() {
+        document.getElementById("furnitureShow").innerHTML = "";
+        let searchString = document
+          .getElementById("searchTerm")
+          .value.toLowerCase();
+
+        let furnitureSearch = new FurnitureSearch();
+
+        let promise = furnitureSearch.getInfo();
+
+        promise.then(function(response) {
+          let body = JSON.parse(response);
+          let contentToSearch = body.body.data;
+          var results = [];
+
+          for (let i = 0; i < contentToSearch.length; i++) {
+            if (
+              contentToSearch[i].name.toLowerCase().includes(searchString) ||
+              contentToSearch[i].description.includes(searchString) ||
+              contentToSearch[i].type.includes(searchString)
+            ) {
+              document.getElementById(
+                "furnitureShow"
+              ).innerHTML += `<div class="productContainter">
+                                                        <div class="imageContainer">
+
+                                                        <img src="${
+                                                          contentToSearch[i]
+                                                            .imageUrl
+                                                        }" alt="">
+                                                        </div>
+                                                        <br>
+                                                        <h3>${
+                                                          contentToSearch[i]
+                                                            .name
+                                                        }</h3><br>
+                                                        <p>${
+                                                          contentToSearch[i]
+                                                            .cost
+                                                        }</p><br>
+                                                        <p>${
+                                                          contentToSearch[i]
+                                                            .description
+                                                        }</p></div>`;
+            } else {
+              document.getElementById("furnitureShow").innerHTML =
+                "Sorry, that search didn't match anything in our inventory.";
+            }
+          }
+
+          document.getElementById("searchTerm").value = "";
+        });
+      }
+    </script>
   </body>
 </html>
