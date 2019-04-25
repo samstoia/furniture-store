@@ -23,7 +23,6 @@
 
       promise.then(function(response) {
         let body = JSON.parse(response);
-        console.log(body);
         body.body.data.forEach(function(item) {
           document.getElementById(
             "container"

@@ -33,6 +33,8 @@
 
     <div id="furnitureShow"></div>
 
+    <div id="noResults"></div>
+
     <script>
       function search() {
         document.getElementById("furnitureShow").innerHTML = "";
@@ -79,8 +81,8 @@
                                                             .description
                                                         }</p></div>`;
             } else {
-              document.getElementById("furnitureShow").innerHTML =
-                "Sorry, that search didn't match anything in our inventory.";
+              document.getElementById("noResults").innerHTML =
+                "Sorry, that search doesn't match anything in our inventory";
             }
           }
 
