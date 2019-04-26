@@ -4,7 +4,7 @@
   display: grid;
   grid-template-columns: repeat(12, 1fr);
   grid-template-rows: 40px auto 40px;
-  grid-gap: 3px;
+  grid-gap: 30px;
   grid-template-areas:
     "p h h h h h h h h h h h"
     "p r r r r r r r r r r r"
@@ -27,6 +27,7 @@
 }
 
 .footer {
+  margin-top: 10px;
   grid-area: f;
   text-align: center;
 }
