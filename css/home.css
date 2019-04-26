@@ -1,8 +1,41 @@
-.headerContainer,
-.productContainer,
-.search {
-  margin-top: 10px;
+.container {
+  height: 100%;
+  position: absolute;
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: 40px 40px auto 40px;
+  grid-gap: 3px;
+  grid-template-areas:
+    "p h h h h h h h h h h h"
+    "p s s s s s s s s s s s"
+    "p r r r r r r r r r r r"
+    "p f f f f f f f f f f f";
+}
+
+.header {
   text-align: center;
+  grid-area: h;
+}
+
+.products {
+  grid-area: p;
+}
+
+.search {
+  margin-top: 15px;
+  grid-area: s;
+  text-align: center;
+}
+
+.results {
+  vertical-align: text-top;
+  text-align: center;
+  grid-area: r;
+}
+
+.footer {
+  text-align: center;
+  grid-area: f;
 }
 
 input {
@@ -10,6 +43,7 @@ input {
 }
 
 .productContainter {
+  vertical-align: text-top;
   position: relative;
   height: 400px;
   margin: 40px;
@@ -27,6 +61,10 @@ input {
   max-width: 100%;
   max-height: 100%;
   top: 0;
+}
+
+#noResults {
+  display: none;
 }
 
 @media only screen and (max-width: 600px) {
