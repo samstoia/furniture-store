@@ -43,7 +43,6 @@ input {
 }
 
 .productContainter {
-  vertical-align: text-top;
   position: relative;
   height: 400px;
   margin: 40px;

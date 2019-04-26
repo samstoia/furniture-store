@@ -21,23 +21,14 @@ function search() {
         document.getElementById(
           "furnitureShow"
         ).innerHTML += `<div class="productContainter">
-                                                  <div class="imageContainer">
+                        <div class="imageContainer">
 
-                                                  <img src="${
-                                                    contentToSearch[i].imageUrl
-                                                  }" alt="">
-                                                  </div>
-                                                  <br>
-                                                  <h3>${
-                                                    contentToSearch[i].name
-                                                  }</h3><br>
-                                                  <p>${
-                                                    contentToSearch[i].cost
-                                                  }</p><br>
-                                                  <p>${
-                                                    contentToSearch[i]
-                                                      .description
-                                                  }</p></div>`;
+                        <img src="${contentToSearch[i].imageUrl}" alt="">
+                        </div>
+                        <br>
+                        <h3>${contentToSearch[i].name}</h3><br>
+                        <p>${contentToSearch[i].cost}</p><br>
+                        <p>${contentToSearch[i].description}</p></div>`;
       } else if (results.length < 1) {
         document.getElementById("noResults").innerHTML =
           "Sorry, that search doesn't match anything in our inventory";

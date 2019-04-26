@@ -21,6 +21,7 @@
 }
 
 #results {
+  vertical-align: text-top;
   text-align: center;
   grid-area: r;
 }

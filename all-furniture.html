@@ -44,20 +44,14 @@
           document.getElementById(
             "results"
           ).innerHTML += `<div class="productContainter">
-                                                        <div class="imageContainer">
-                                                
-                                                        <img src="${
-                                                          item.imageUrl
-                                                        }" alt="">
-                                                        </div>
-                                                        <br>
-                                                        <h3>${
-                                                          item.name
-                                                        }</h3><br>
-                                                        <p>${item.cost}</p><br>
-                                                        <p>${
-                                                          item.description
-                                                        }</p></div>`;
+                          <div class="imageContainer">
+                  
+                          <img src="${item.imageUrl}" alt="">
+                          </div>
+                          <br>
+                          <h3>${item.name}</h3><br>
+                          <p>${item.cost}</p><br>
+                          <p>${item.description}</p></div>`;
         });
       });
     </script>
